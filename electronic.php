@@ -83,7 +83,7 @@
                     </div>
                 </div>
                 <div class="s_top"><input type="text" placeholder="search"></div>
-                <div class="h_d"><a href="">Profile</a></div>
+                <div class="h_d"><a href="">Login/Sign Up</a></div>
 
             </div>
         </header>

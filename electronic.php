@@ -83,8 +83,8 @@
                     </div>
                 </div>
                 <div class="s_top"><input type="text" placeholder="search"></div>
-                <div class="h_d"><a href="">Login</a></div>
-                <div class="h_d"><a href="">Sign_Up</a></div>
+                <div id="login"><a href="login.php">Login</a></div>
+                <div id="sign_up"><a href="signup.php">Sign_Up</a></div>
 
             </div>
         </header>
@@ -92,6 +92,7 @@
             <div></div>
             <div class="home_content">
                 <h1 align="left">Best Of Electronic Music</h1>
+                <iframe id="log"></iframe>
            
                 <?php
                     echo "<link rel='stylesheet' type='text/css' href='feed.css' />";
@@ -143,6 +144,6 @@
             </div>
             <div></div>
         </div>
-        <script src="" async defer></script>
+        <script src="login_signup.js" async defer></script>
     </body>
 </html>

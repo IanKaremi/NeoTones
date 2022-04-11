@@ -29,7 +29,7 @@
             .entry{
                 display:grid;
                 grid-template-columns: 1fr 3fr 1fr;
-                grid-template-rows: 15em 8em ;
+                grid-template-rows: 13em 7em ;
                 
             }
             #entry_title{

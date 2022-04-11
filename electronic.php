@@ -21,7 +21,7 @@
             img{
                 height:200px;
                 width:200px;
-                padding-top: 50px;
+               
                 padding-left: 5px;
                 padding-right: 5px;
             }
@@ -29,7 +29,7 @@
             .entry{
                 display:grid;
                 grid-template-columns: 1fr 3fr 1fr;
-                grid-template-rows: 7em 3em ;
+                grid-template-rows: 15em 8em ;
                 
             }
             #entry_title{
@@ -95,7 +95,7 @@
                
            
                 <?php
-                    echo "<link rel='stylesheet' type='text/css' href='feed.css' />";
+                  
                     require_once"config.php";
                     $elec="SELECT * FROM `works` WHERE `Genre`='electronic';";
 
@@ -116,13 +116,14 @@
                             .$row['Name']."    "
                             ."</p><p align=left id='entry_artist'>"
                             .$row['Artist']."    "
-                            ."</p></div><div>"."<div></div>"
-                            ."</div>"
+                            ."</p></div><div>"
+                           
+                            ."</div><div>"
                             .$row['Release_Date']."    "."<br>"
                             .$row['Type']."    "."<br>"
                             .$row['Length']."    "."<br>"
                             .$row['Tags']."    "
-                            ."<div>"
+                            ."</div><div>"
                             .$row['Description']."    "
                             ."</div><div>"
                             .$row['Price']." "

@@ -11,7 +11,7 @@
         <meta name="description" content="">
         <meta name="theme-color" content=""#8a5cffff>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="feed.css">
+        <link rel="stylesheet" href="">
         <link rel="stylesheet" href="common.css">
         <style>
             h1{
@@ -29,7 +29,7 @@
             .entry{
                 display:grid;
                 grid-template-columns: 1fr 3fr 1fr;
-                grid-template-rows: 20em 20em;
+                grid-template-rows: 7em 3em ;
                 
             }
             #entry_title{
@@ -92,7 +92,7 @@
             <div></div>
             <div class="home_content">
                 <h1 align="left">Best Of Electronic Music</h1>
-                <iframe id="log"></iframe>
+               
            
                 <?php
                     echo "<link rel='stylesheet' type='text/css' href='feed.css' />";
@@ -106,8 +106,9 @@
                     
                     if(!$qr || mysqli_num_rows($qr) > 0)
                     {
-                        echo"<hr> <div class='entry'>";
+                        
                         while($row = $qr->fetch_assoc()) {
+                            echo"<hr> <div class='entry'>";
                             echo "<div class='img'> <img src="
                             .$row['Art'].">"
 
@@ -124,13 +125,15 @@
                             ."<div>"
                             .$row['Description']."    "
                             ."</div><div>"
-                            .$row['Price']."    "
+                            .$row['Price']." "
+                            ."<button><a>Add To Cart</a></button>"
                             ."</div>";
+                            echo"</div>";
                            
                             
                         }
 
-                        echo"</div>"."<hr>";
+                        echo"<hr>";
                         
                         
                    }else{
@@ -144,6 +147,6 @@
             </div>
             <div></div>
         </div>
-        <script src="login_signup.js" async defer></script>
+        <script src="" async defer></script>
     </body>
 </html>

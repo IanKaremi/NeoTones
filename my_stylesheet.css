@@ -20,7 +20,7 @@ p{
     -ms-transform:scale(1.1)  ;
     -o-transform:scale(1.1)  ;
 }
-.index_img{
+img{
     height:144px;
     width:256px;
     /*1280 * 720*/

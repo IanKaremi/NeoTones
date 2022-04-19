@@ -11,7 +11,7 @@
         <meta name="description" content="">
         <meta name="theme-color" content="#8a5cffff">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="feed.css">
+        <link rel="stylesheet" href="">
         <link rel="stylesheet" href="common.css">
     </head>
     <style>
@@ -63,10 +63,11 @@
 
     <?php
      include_once"top.html";
+     echo "<h1 align=left>Best Of Gospel Music</h1>";
 
 
      require_once"config.php";
-     $elec="SELECT * FROM `works_list` WHERE `Genre`='electronic';";
+     $elec="SELECT * FROM `works_list` WHERE `Genre`='gospel';";
 
      $qr= $con ->query($elec) or die($con->error);
      $var;
@@ -107,12 +108,12 @@
          
          
     }else{
-         echo"0 results";
+         echo"<h2>Zero results ......:[<h2>";
      };
 
-
-     include_once"bottom.html"
+    mysqli_close($con);
+    include_once"bottom.html"
      
-     ?>          
+    ?>          
    
 </html>

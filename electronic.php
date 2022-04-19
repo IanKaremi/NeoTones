@@ -62,18 +62,15 @@
     </head>
     <?php
         include_once"top.html";
-                  
+        echo "<h1 align=left>Best Of Electronic Music</h1>";
                     require_once"config.php";
                     $elec="SELECT * FROM `works_list` WHERE `Genre`='electronic';";
 
                     $qr= $con ->query($elec) or die($con->error);
                     $var;
 
-                    
-                    
                     if(!$qr || mysqli_num_rows($qr) > 0)
                     {
-                        
                         while($row = $qr->fetch_assoc()) {
                             echo"<hr> <div class='entry'>";
                             echo "<div class='img'> <img src="
@@ -84,7 +81,6 @@
                             ."</p><p align=left id='entry_artist'>"
                             .$row['Artist Name']."    "
                             ."</p></div><div>"
-                           
                             ."</div><div>"
                             .$row['Release_Date']."    "."<br>"
                             .$row['Type']."    "."<br>"
@@ -97,21 +93,13 @@
                             ."<button><a>Add To Cart</a></button>"
                             ."</div>";
                             echo"</div>";
-                           
-                            
                         }
 
                         echo"<hr>";
-                        
-                        
-                   }else{
+                    }else{
                         echo"0 results";
                     };
-
+                    mysqli_close($con);
                     include_once "bottom.html"
-               
                 ?>
-             
-        
-    </body>
 </html>

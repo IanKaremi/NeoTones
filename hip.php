@@ -7,9 +7,9 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Electronic - Neo Tones</title>
+        <title>Hip Hop & RnB - Neo Tones</title>
         <meta name="description" content="">
-        <meta name="theme-color" content=""#8a5cffff>
+        <meta name="theme-color" content="#8a5cffff">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="feed.css">
         <link rel="stylesheet" href="common.css">
@@ -60,11 +60,45 @@
             }
         </style>
     </head>
-    <?php
-        include_once"top.html";
+    <body align="center">
+        <script src="login_signup.js" async defer></script>
+        <header>
+            <div class="logo" align="left"><a href="index.html">NeoTones</a></div>
+            <div class="toolbar">
+                <div><a href="feed.html">Feed</a></div>
+                <div><a href="likes.html">Purchased</a></div>
+                <div class="drop">
+                    <div><a>Genres</a>
+                        <div class="on_hover">
+                            <a href="afro.html">Afro</a>
+                            <a href="hip.php">Hip-hop & RnB</a>
+                            <a href="gospel.html">Gospel</a>
+                            <a href="electronic.php">Electronic</a>
+                            <a href="pop.html">Pop</a>
+                            <a href="rock.html">Rock</a>
+                            <a href="reggae.html">Reggae</a>
+                            <a href="classical.html">Classical</a>
+                            <a href="country.html">Country</a>
+                            <a href="Jazz.html">Jazz</a>                   
+                        </div>
+                    </div>
+                </div>
+                <div class="s_top"><input type="text" placeholder="search"></div>
+                <div id="login"><a href="">Login</a></div>
+                <div id="sign_up"><a href="">Sign_Up</a></div>
+
+              
+
+            </div>
+        </header>
+        <div class="home_body">
+            <div></div>
+            <div class="home_content">
+                <h1 align="left">Best Of Hip Hop & RnB</h1>
+                <?php
                   
                     require_once"config.php";
-                    $elec="SELECT * FROM `works_list` WHERE `Genre`='electronic';";
+                    $elec="SELECT * FROM `works_list` WHERE `Genre`='hip-hop';";
 
                     $qr= $con ->query($elec) or die($con->error);
                     $var;
@@ -107,11 +141,13 @@
                    }else{
                         echo"0 results";
                     };
-
-                    include_once "bottom.html"
                
                 ?>
-             
+            </div>
+           
+            </div>
+            <div></div>
+        </div>
         
     </body>
 </html>

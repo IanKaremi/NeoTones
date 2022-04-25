@@ -1,91 +1,41 @@
 <?php
-// Initialize the session
+
 session_start();
  
-// Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: http://localhost/Neotones/electronic.php");
-    exit;
-}
+
+
  
 // Include config file
 require_once "config.php";
- 
-// Define variables and initialize with empty values
+
 $username = $password = "";
-$username_err = $password_err = $login_err = "";
- 
-// Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
- 
-    // Check if username is empty
-    if(empty(trim($_POST["username"]))){
-        $username_err = "Please enter username.";
-    } else{
-        $username = trim($_POST["username"]);
-    }
-    
-    // Check if password is empty
-    if(empty(trim($_POST["password"]))){
-        $password_err = "Please enter your password.";
-    } else{
-        $password = trim($_POST["password"]);
-    }
-    
-    // Validate credentials
-    if(empty($username_err) && empty($password_err)){
-        // Prepare a select statement
-        $sql = "SELECT id, username, password FROM users WHERE username = ?";
-        
-        if($stmt = mysqli_prepare($con, $sql)){
-            // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "s", $param_username);
-            
-            // Set parameters
-            $param_username = $username;
-            
-            // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
-                // Store result
-                mysqli_stmt_store_result($stmt);
-                
-                // Check if username exists, if yes then verify password
-                if(mysqli_stmt_num_rows($stmt) == 1){                    
-                    // Bind result variables
-                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
-                    if(mysqli_stmt_fetch($stmt)){
-                        if(password_verify($password, $hashed_password)){
-                            // Password is correct, so start a new session
-                            session_start();
-                            
-                            // Store data in session variables
-                            $_SESSION["loggedin"] = true;
+
+if (isset($_POST['login'])){
+
+    $username = mysqli_real_escape_string($con, $_POST['username']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
+                    
+    $query 		= mysqli_query($con, "SELECT * FROM users WHERE  password='$password' and username='$username'");
+    $row		= mysqli_fetch_array($query);
+    $num_row 	= mysqli_num_rows($query);
+
+                    if ($num_row > 0)
+                        {
+                            $_SESSION["login"] = true;
                             $_SESSION["id"] = $id;
-                            $_SESSION["username"] = $username;                            
-                            
-                            // Redirect user to welcome page
-                            header("location: http://localhost/Neotones/electronic.php");
-                        } else{
-                            // Password is not valid, display a generic error message
-                            $login_err = "Invalid username or password.";
+                            $_SESSION["username"] = $row['username'];
+                            header('location: hip.php');
+                            echo"Success!";
+                        }
+                    else
+                        {
+                            echo 'Invalid Username and Password Combination';
+                           
                         }
                     }
-                } else{
-                    // Username doesn't exist, display a generic error message
-                    $login_err = "Invalid username or password.";
-                }
-            } else{
-                echo "Oops! Something went wrong. Please try again later.";
-            }
-
-            // Close statement
-            mysqli_stmt_close($stmt);
-        }
-    }
-    
-    // Close connection
+                
     mysqli_close($con);
-}
+
 ?>
  
 <!DOCTYPE html>
@@ -149,17 +99,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <div class="form-group">
                     <label>Username</label>
                     <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                    <span class="invalid-feedback"><?php echo $username_err; ?></span>
                 </div>    
 
                 <div class="form-group">
                     <label>Password</label>
                     <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
-                    <span class="invalid-feedback"><?php echo $password_err; ?></span>
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" class="btn btn-primary" value="Login">
+                    <input type="submit"  name="login" value="login">
                 </div>
                 <p>Don't have an account? <a href="signup.php">Sign up now</a>.</p>
             </form>

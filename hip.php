@@ -11,7 +11,7 @@
         <meta name="description" content="">
         <meta name="theme-color" content="#8a5cffff">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="feed.css">
+        <link rel="stylesheet" href="">
         <link rel="stylesheet" href="common.css">
         <style>
             h1{
@@ -84,7 +84,7 @@
                     </div>
                 </div>
                 <div class="s_top"><input type="text" placeholder="search"></div>
-                <div id="login"><a href="">Login</a></div>
+                <div id="login"><a href="login.php">Login</a></div>
                 <div id="sign_up"><a href="">Sign_Up</a></div>
 
               

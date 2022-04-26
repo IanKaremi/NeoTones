@@ -1,9 +1,9 @@
 <body align="center">
     <header>
-        <div class="logo" align="left"><a href="index.html">NeoTones</a></div>
+        <div class="logo" align="left"><a href="index.php">NeoTones</a></div>
         <div class="toolbar">
             <div><a href="feed.html">Feed</a></div>
-            <div><a href="likes.html">Purchased</a></div>
+            <div><a href="likes.php">Purchased</a></div>
             <div class="drop">
                 <div><a>Genres</a>
                     <div class="on_hover">
@@ -20,7 +20,8 @@
                     </div>
                 </div>
             </div>
-            <div class="s_top"><form action="search.php" method="post"><input type="text" name="search" placeholder="Search"><input type="submit" value="Go"></form></div>
+            <div class="s_top"><form action="search.php" method="post"><input type='search' name="search" placeholder="Search" style="padding: 6px; border-radius: 0; border: none; margin-left: 5px;">
+            <input type="submit" value="Go" style="padding: 6px; border: none; border-radius: 2px; background-color: lightgray;"></form></div>
             <?php
             session_start();
             if( $_SESSION['login']==true){

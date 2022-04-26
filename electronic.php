@@ -61,7 +61,7 @@
         </style>
     </head>
     <?php
-        include_once"top.html";
+        include_once"top.php";
         echo "<h1 align=left>Best Of Electronic Music</h1>";
                     require_once"config.php";
                     $elec="SELECT * FROM `works_list` WHERE `Genre`='electronic';";

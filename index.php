@@ -37,7 +37,9 @@
                     </div>
                 </div>
                 <div class="s_top"><input type="text" placeholder="search"></div>
-                <div class="h_d"><a href="">Profile</a></div>
+                <div id="login"><a href="login.php">Login</a></div>
+                <div id="sign_up"><a href="">Sign_Up</a></div>
+
 
             </div>
         </header>
@@ -52,8 +54,10 @@
                 <hr>
                 <div class="search">
                     <h2>...Search by Artist Name or Title:</h2>
+                    <form action="search.php" method="post">
                     <input id="searchbar" type="search">
                     <input id="search" type="submit" value="Go">
+                    </form>
                     <!--style the search bar-->
                 </div>
                 <hr>

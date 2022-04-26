@@ -20,13 +20,20 @@
                     </div>
                 </div>
             </div>
-            <div class="s_top"><input type="text" placeholder="search"></div>
-            <div class="h_d"><a href="">Profile</a></div>
+            <div class="s_top"><form action="search.php" method="post"><input type="text" name="search" placeholder="Search"><input type="submit" value="Go"></form></div>
+            <?php
+            session_start();
+            if( $_SESSION['login']==true){
+                echo"<div>". $_SESSION['username']."</div>";
+                echo"<div id= 'login'><a href='login.php'>Log Out</a></div>";
+           }else{
+               echo"<div id='login'><a href='login.php'>Login</a></div>";
+               echo"<div id='sign_up'><a href='signup.php'>Sign_Up</a></div>";
+           }
+            ?>
 
         </div>
     </header>
     <div class="home_body">
         <div></div>
         <div class="home_content">
-           
-            

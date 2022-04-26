@@ -60,42 +60,10 @@
             }
         </style>
     </head>
-    <body align="center">
-        <script src="login_signup.js" async defer></script>
-        <header>
-            <div class="logo" align="left"><a href="index.html">NeoTones</a></div>
-            <div class="toolbar">
-                <div><a href="feed.html">Feed</a></div>
-                <div><a href="likes.html">Purchased</a></div>
-                <div class="drop">
-                    <div><a>Genres</a>
-                        <div class="on_hover">
-                            <a href="afro.html">Afro</a>
-                            <a href="hip.php">Hip-hop & RnB</a>
-                            <a href="gospel.html">Gospel</a>
-                            <a href="electronic.php">Electronic</a>
-                            <a href="pop.html">Pop</a>
-                            <a href="rock.html">Rock</a>
-                            <a href="reggae.html">Reggae</a>
-                            <a href="classical.html">Classical</a>
-                            <a href="country.html">Country</a>
-                            <a href="Jazz.html">Jazz</a>                   
-                        </div>
-                    </div>
-                </div>
-                <div class="s_top"><input type="text" placeholder="search"></div>
-                <div id="login"><a href="login.php">Login</a></div>
-                <div id="sign_up"><a href="">Sign_Up</a></div>
-
-              
-
-            </div>
-        </header>
-        <div class="home_body">
-            <div></div>
-            <div class="home_content">
-                <h1 align="left">Best Of Hip Hop & RnB</h1>
-                <?php
+    
+    <?php
+                   include_once"top.php";
+                   echo "<h1 align=left>Best Of Hip-Hop & RnB</h1>";
                   
                     require_once"config.php";
                     $elec="SELECT * FROM `works_list` WHERE `Genre`='hip-hop';";
@@ -142,12 +110,10 @@
                         echo"0 results";
                     };
                
+                    include_once "bottom.html";
+                    mysqli_close($con);
                 ?>
-            </div>
-           
-            </div>
-            <div></div>
-        </div>
+     
         
     </body>
 </html>

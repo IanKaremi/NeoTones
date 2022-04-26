@@ -1,10 +1,7 @@
 <?php
 
 session_start();
- 
 
-
- 
 // Include config file
 require_once "config.php";
 
@@ -24,7 +21,7 @@ if (isset($_POST['login'])){
                             $_SESSION["login"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $row['username'];
-                            header('location: hip.php');
+                            header('location: index.php');
                             echo"Success!";
                         }
                     else

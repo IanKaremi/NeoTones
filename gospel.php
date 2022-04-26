@@ -62,7 +62,7 @@
     </style>
 
     <?php
-     include_once"top.html";
+     include_once"top.php";
      echo "<h1 align=left>Best Of Gospel Music</h1>";
 
 

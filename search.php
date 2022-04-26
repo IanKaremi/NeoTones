@@ -105,7 +105,7 @@
                         echo"<hr>";
 
                    }else{
-                        echo"<div class='entry'>0 results</div>";
+                        echo"<h2>No results were found,"."</br>"."Try searching for another term. </h2>";
                     };
 
 

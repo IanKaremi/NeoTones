@@ -71,10 +71,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          
         if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
+            mysqli_stmt_bind_param($stmt, "ss", $username, $param_password);
             
             // Set parameters
-            $param_username = $username;
+            $username=trim($_POST['username']);
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
             
             // Attempt to execute the prepared statement
@@ -146,6 +146,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <h2>Sign Up</h2>
             <p>Please fill this form to create an account.</p>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            <!--<form action="test.php" method="post">-->
                 <div class="form-group">
                     <label>Username</label>
                     <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">

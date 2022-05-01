@@ -67,7 +67,6 @@
                     $elec="SELECT * FROM `works_list` WHERE `Genre`='electronic';";
 
                     $qr= $con ->query($elec) or die($con->error);
-                    $var;
 
                     if(!$qr || mysqli_num_rows($qr) > 0)
                     {

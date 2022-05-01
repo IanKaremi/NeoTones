@@ -6,7 +6,7 @@ if(ini_get("session.use_cookies")){
         $params["secure"], $params["httponly"]
     );
 }
-session_destroy();
+//session_destroy();
 
 session_start();
 
@@ -19,25 +19,33 @@ if (isset($_POST['login'])){
 
     $username = mysqli_real_escape_string($con, $_POST['username']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
-                    
-    $query 		= mysqli_query($con, "SELECT * FROM users WHERE  password='$password' and username='$username'");
-    $row		= mysqli_fetch_array($query);
-    $num_row 	= mysqli_num_rows($query);
+    $stmt = mysqli_prepare($con, "SELECT * FROM users WHERE username= :username ");
+    mysqli_stmt_bind_param($stmt,'s' ,$username);
+    $res= $con ->query($query) or die($con->error);
 
-                    if ($num_row > 0)
-                        {
-                            $_SESSION["login"] = true;
-                            $_SESSION["id"] = $id;
-                            $_SESSION["username"] = $row['username'];
-                            header('location: index.php');
-                            echo"Success!";
-                        }
-                    else
-                        {
-                            echo 'Invalid Username and Password Combination';
-                           
-                        }
-                    }
+
+    if (!$qr || mysqli_num_rows($res)>0){
+        while($row = $res->fetch_assoc()){
+
+            $hash = $row['password'];
+            $pass_match= password_verify($password , $hash);
+
+            if($pass_match){
+                $_SESSION["login"] = true;
+                $_SESSION["id"] = $id;
+                $_SESSION["username"] = $row['username'];
+                header('location: index.php');
+                echo"Success!";
+            }
+        }
+    }
+
+    else
+        {
+            $login_err= 'Invalid Username and Password Combination';
+        }
+   
+    }
                 
     mysqli_close($con);
 

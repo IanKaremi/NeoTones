@@ -51,24 +51,23 @@ a{
 .s_top {
     display: flex;
 }
-input [type=search i]{
-    background-color:rgb(228, 220, 250);
-    float: right;
+input [type=text i], [type=password]{
     padding: 6px;
-    margin-right: 16px;
-    margin-left: 10px;
-    border-radius:5px;
-    /*border:none;
-    */font-size: 17px;
-    -webkit-border-radius:5px;
-    -moz-border-radius:5px;
-    -ms-border-radius:5px;
-    -o-border-radius:5px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border-radius:1px;
+    border:2px solid white ;
+    font-size: 17px;
+    -webkit-border-radius:1px;
+    -moz-border-radius:1px;
+    -ms-border-radius:1px;
+    -o-border-radius:1px;
+    width:25em;
 }
 
-input [type=submit]{
-    padding:100px;
-}
+
+
+
 
 .toolbar>div{
     margin-top:10px;

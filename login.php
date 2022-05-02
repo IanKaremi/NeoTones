@@ -19,20 +19,19 @@ if (isset($_POST['login'])){
 
     $username = mysqli_real_escape_string($con, $_POST['username']);
     $password = mysqli_real_escape_string($con, $_POST['password']);
-    $stmt = mysqli_prepare($con, "SELECT * FROM users WHERE username= :username ");
-    mysqli_stmt_bind_param($stmt,'s' ,$username);
+    $query="SELECT * FROM users WHERE username= '$username' ";
     $res= $con ->query($query) or die($con->error);
 
 
-    if (!$qr || mysqli_num_rows($res)>0){
+    if (!$res || mysqli_num_rows($res)>0){
         while($row = $res->fetch_assoc()){
-
+            /*echo"Results:  <br/>";
+            echo ("Username:     ". $row['username'] ."<br/>");
+            echo("Hashed Password:     ". $row['password']."<br/>" );*/
             $hash = $row['password'];
-            $pass_match= password_verify($password , $hash);
-
+            $pass_match= password_verify($password , $hash); 
             if($pass_match){
                 $_SESSION["login"] = true;
-                $_SESSION["id"] = $id;
                 $_SESSION["username"] = $row['username'];
                 header('location: index.php');
                 echo"Success!";
@@ -108,6 +107,7 @@ if (isset($_POST['login'])){
             ?>
             <div class="form">
 
+            <!--<form action="test.php" method="post">-->
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="form-group">
                     <label>Username</label>

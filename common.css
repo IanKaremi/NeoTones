@@ -1,10 +1,11 @@
 html, body {
-    width: 100%;
+    width: auto;
     height:100%;
 }
 body{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight:200;
+    /*font-family: Verdana, Geneva, Tahoma, sans-serif;*/
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight:400;
     color:#fbfbef;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
@@ -26,6 +27,7 @@ body{
 header{
     font-family: Arial, Helvetica, sans-serif;
     display:flex;
+    max-height: 2em;
    /* display:grid;
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr 2fr;*/
     font-size: 30px;
@@ -50,6 +52,8 @@ a{
 }
 .s_top {
     display: flex;
+    width:fit-content;
+    margin-top: 5px;
 }
 input [type=text i], [type=password]{
     padding: 6px;
@@ -112,6 +116,4 @@ on_hover>a{
     grid-template-columns: 1fr 4fr 1fr  ;
 }
 
-form{
-   padding-bottom: 10px;
-}
+

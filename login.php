@@ -65,6 +65,11 @@ if (isset($_POST['login'])){
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="feed.css">
         <link rel="stylesheet" href="common.css">
+        <style>
+            <?php
+                include_once "button.css";
+            ?>
+        </style>
         
     
     </head>
@@ -111,16 +116,17 @@ if (isset($_POST['login'])){
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="form-group">
                     <label>Username</label>
-                    <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
+                    <input type="text" name="username" style=" padding: 6px;font-size: 17px;margin-bottom: 5px;margin-top: 5px;
+                    border: 2px solid white; width:25em;"class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
                 </div>    
 
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
+                    <input type="password" name="password" class=" form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
                 </div>
 
                 <div class="form-group">
-                    <input type="submit"  name="login" value="login">
+                    <input type="submit"  name="login" value="Login">
                 </div>
                 <p>Don't have an account? <a href="signup.php">Sign up now</a>.</p>
             </form>

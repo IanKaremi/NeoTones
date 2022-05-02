@@ -14,51 +14,13 @@
         <link rel="stylesheet" href="feed.css">
         <link rel="stylesheet" href="common.css">
         <style>
-            h1{
-                margin-left: 1em;
-            }
-
-            img{
-                height:200px;
-                width:200px;
-               
-                padding-left: 5px;
-                padding-right: 5px;
-            }
-
-            .entry{
-                display:grid;
-                grid-template-columns: 1fr 3fr 1fr;
-                grid-template-rows: 13em 7em ;
-                
-            }
-            #entry_title{
-                font-size: 40px;
-                font-weight: 700;
-            }
-
-            #entry_artist{
-                font-size: 30px;
-                font-weight: 700;
-            }
-
-            button{
-                color:azure;
-                font-size:larger;
-                font-weight:400;
-                background-color: rgb(119, 211, 13);
-                border:1px solid black;
-                border-radius:5px;
-                -webkit-border-radius:5px;
-                -moz-border-radius:5px;
-                -ms-border-radius:5px;
-                -o-border-radius:5px;
-                width:10rem;
-                margin-right: 5px;
-                margin-top: 50px;
-                padding: 10px;
-            }
+           <?php
+            
+                include_once "button.css";
+            ?>
         </style>
+        
+
     </head>
     <?php
         include_once"top.php";

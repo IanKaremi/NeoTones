@@ -26,6 +26,12 @@
         include_once"top.php";
         echo "<h1 align=left>Best Of Electronic Music</h1>";
                     require_once"config.php";
+
+                    if($_POST['cart']){
+                        header('location: test.php');
+                        echo"Hello";
+                    }
+
                     $elec="SELECT * FROM `works_list` WHERE `Genre`='electronic';";
 
                     $qr= $con ->query($elec) or die($con->error);
@@ -42,16 +48,16 @@
                             ."</p><p align=left id='entry_artist'>"
                             .$row['Artist Name']."    "
                             ."</p></div><div>"
-                            ."</div><div>"
-                            .$row['Release_Date']."    "."<br>"
-                            .$row['Type']."    "."<br>"
+                            ."</div><div>"."Release date:   "
+                            .$row['Release_Date']."    "."<br>"."Release Type:   "
+                            .$row['Type']."    "."<br>"."Length:    "
                             .$row['Length']."    "."<br>"
                             .$row['Tags']."    "
                             ."</div><div>"
                             .$row['Description']."    "
-                            ."</div><div>"
+                            ."</div><div>"."Price: Ksh. "
                             .$row['Price']." "
-                            ."<button><a>Add To Cart</a></button>"
+                            ."<form action=".htmlspecialchars($_SERVER['PHP_SELF'])." method='post'><input type='button' name='cart' value='Add To Cart'></form>"
                             ."</div>";
                             echo"</div>";
                         }
@@ -60,6 +66,8 @@
                     }else{
                         echo"0 results";
                     };
+
+                   
                     mysqli_close($con);
                     include_once "bottom.html"
                 ?>

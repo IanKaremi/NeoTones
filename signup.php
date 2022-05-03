@@ -110,6 +110,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="feed.css">
     <link rel="stylesheet" href="common.css">
+    <style>
+            <?php
+                include_once "button.css";
+            ?>
+    </style>
+        
     
 </head>
 <body align="center">

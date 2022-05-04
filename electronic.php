@@ -27,10 +27,13 @@
         echo "<h1 align=left>Best Of Electronic Music</h1>";
                     require_once"config.php";
 
-                    if($_POST['cart']){
-                        header('location: test.php');
-                        echo"Hello";
+                    if(!isset($_SESSION['cart'])){
+                        $_SESSION['cart'] = array();
                     }
+                    unset($_SESSION['qty_array']);
+                
+
+                   
 
                     $elec="SELECT * FROM `works_list` WHERE `Genre`='electronic';";
 
@@ -57,7 +60,7 @@
                             .$row['Description']."    "
                             ."</div><div>"."Price: Ksh. "
                             .$row['Price']." "
-                            ."<form action=".htmlspecialchars($_SERVER['PHP_SELF'])." method='post'><input type='button' name='cart' value='Add To Cart'></form>"
+                            ."<button><a href=add_cart.php?ID=" .$row['ID']. ">Add To Cart</a></button>"
                             ."</div>";
                             echo"</div>";
                         }

@@ -51,7 +51,7 @@
                           .$row['Description']."    "
                           ."</div><div>"."Price: Ksh. "
                           .$row['Price']." "
-                          ."<button><a href=delete_item?ID=" .$row['ID']. ">Remove</a></button>"
+                          ."<button><a href=item_delete?ID=" .$row['ID']. ">Remove</a></button>"
                           ."</div>";
                           echo"</div>";
                       }

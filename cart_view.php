@@ -16,7 +16,7 @@
         <style>
            <?php
             
-                include_once "../css/button.css";
+                include_once "css/button.css";
             ?>
         </style>
         
@@ -24,22 +24,22 @@
     </head>
     <body align="center">
     <header>
-        <div class="logo" align="left"><a href="index.php">NeoTones</a></div>
+        <div class="logo" align="left"><a href="Pages/index.php">NeoTones</a></div>
         <div class="toolbar">
-            <div><a href="feed.php">Feed</a></div>
-            <div><a href="likes.php">Purchased</a></div>
+            <div><a href="Pages/feed.php">Feed</a></div>
+            <div><a href="Pages/likes.php">Purchased</a></div>
             <div class="drop">
                 <div><a>Genres</a>
                     <div class="on_hover">
-                        <a href="afro.php">Afro</a>
-                        <a href="hip.php">Hip-hop & RnB</a>
-                        <a href="gospel.php">Gospel</a>
-                        <a href="electronic.php">Electronic</a>
-                        <a href="pop.php">Pop</a>
-                        <a href="rock.php">Rock</a>
-                        <a href="reggae.php">Reggae</a>
-                        <a href="country.php">Country</a>
-                        <a href="Jazz.php">Jazz</a>                   
+                        <a href="Pages/afro.php">Afro</a>
+                        <a href="Pages/hip.php">Hip-hop & RnB</a>
+                        <a href="Pages/gospel.php">Gospel</a>
+                        <a href="Pages/electronic.php">Electronic</a>
+                        <a href="Pages/pop.php">Pop</a>
+                        <a href="Pages/rock.php">Rock</a>
+                        <a href="Pages/reggae.php">Reggae</a>
+                        <a href="Pages/country.php">Country</a>
+                        <a href="Pages/Jazz.php">Jazz</a>                   
                     </div>
                 </div>
             </div>

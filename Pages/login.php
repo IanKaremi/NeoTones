@@ -11,7 +11,7 @@ if(ini_get("session.use_cookies")){
 session_start();
 
 // Include config file
-require_once "config.php";
+require_once "../config.php";
 
 $username = $password = "";
 
@@ -63,8 +63,8 @@ if (isset($_POST['login'])){
         <meta name="description" content="">
         <meta name="theme-color" content=""#8a5cffff>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="feed.css">
-        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="../css/feed.css">
+        <link rel="stylesheet" href="../css/common.css">
         <style>
             <?php
                 include_once "button.css";
@@ -75,23 +75,22 @@ if (isset($_POST['login'])){
     </head>
     <body align=center>
         <header>
-            <div class="logo" align="left"><a href="index.html">NeoTones</a></div>
+            <div class="logo" align="left"><a href="index.php">NeoTones</a></div>
             <div class="toolbar">
-                <div><a href="feed.html">Feed</a></div>
-                <div><a href="likes.html">Purchased</a></div>
+                <div><a href="feed.php">Feed</a></div>
+                <div><a href="likes.php">Purchased</a></div>
                 <div class="drop">
                     <div><a>Genres</a>
                         <div class="on_hover">
-                            <a href="afro.html">Afro</a>
-                            <a href="hip.html">Hip-hop & RnB</a>
-                            <a href="gospel.html">Gospel</a>
-                            <a href="electronic.html">Electronic</a>
-                            <a href="pop.html">Pop</a>
-                            <a href="rock.html">Rock</a>
-                            <a href="reggae.html">Reggae</a>
-                            <a href="classical.html">Classical</a>
-                            <a href="country.html">Country</a>
-                            <a href="Jazz.html">Jazz</a>                   
+                            <a href="afro.php">Afro</a>
+                            <a href="hip.php">Hip-hop & RnB</a>
+                            <a href="gospel.php">Gospel</a>
+                            <a href="electronic.php">Electronic</a>
+                            <a href="pop.php">Pop</a>
+                            <a href="rock.php">Rock</a>
+                            <a href="reggae.php">Reggae</a>
+                            <a href="country.php">Country</a>
+                            <a href="Jazz.php">Jazz</a>                   
                         </div>
                     </div>
                 </div>

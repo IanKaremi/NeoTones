@@ -70,7 +70,15 @@ input [type=text i], [type=password]{
     width:25em;
 }
 
-
+.sidebar>a{
+   
+    display: flex;
+    margin-right: 10px;
+    background-color: #8a5cffff;
+    border-radius: 5px;
+    padding-left: 10px;
+    border: 5px solid transparent;
+}
 
 
 
@@ -98,6 +106,8 @@ on_hover>a{
 }
 .drop:hover .on_hover{
     display:grid;
+
+
 }
 
 .home_content{

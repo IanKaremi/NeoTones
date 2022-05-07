@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once "config.php";
+require_once "../config.php";
  
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
@@ -108,11 +108,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta name="description" content="">
     <meta name="theme-color" content=""#8a5cffff>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="feed.css">
-    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="../css/feed.css">
+    <link rel="stylesheet" href="../css/common.css">
     <style>
             <?php
-                include_once "button.css";
+                include_once "../css/button.css";
             ?>
     </style>
         

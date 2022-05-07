@@ -11,21 +11,21 @@
         <meta name="description" content="">
         <meta name="theme-color" content=""#8a5cffff>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/feed.css">
-        <link rel="stylesheet" href="css/common.css">
+        <link rel="stylesheet" href="../css/feed.css">
+        <link rel="stylesheet" href="../css/common.css">
         <style>
            <?php
             
-                include_once "button.css";
+                include_once "../button.css";
             ?>
         </style>
         
 
     </head>
     <?php
-        include_once"top.php";
+        include_once"../top.php";
         echo "<h1 align=left>The Latest in Music</h1>";
-                    require_once"config.php";
+                    require_once"../config.php";
 
                     if(!isset($_SESSION['cart'])){
                         $_SESSION['cart'] = array();
@@ -35,7 +35,7 @@
 
                    
 
-                    $elec="SELECT * FROM `works_list` ORDER BY Release_Date";
+                    $elec="SELECT * FROM `works_list` ORDER BY Release_Date DESC";
 
                     $qr= $con ->query($elec) or die($con->error);
 
@@ -72,6 +72,6 @@
 
                    
                     mysqli_close($con);
-                    include_once "bottom.html"
+                    include_once "../bottom.html"
                 ?>
 </html>

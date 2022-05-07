@@ -35,7 +35,7 @@
         </div>
     </header>
     <div class="home_body">
-        <div>
+        <div class="sidebar">
             <a href="../cart_view.php">View Cart</a>
             <a href="../checkout.php">Checkout</a>
         </div>

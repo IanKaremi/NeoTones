@@ -38,16 +38,16 @@
                     <h2>... or Choose by Genre:</h2>
 
                     <div class="genres">
-                        <div><img class="index_img" src="img/burna-boy.png"><a href="afro.html"></a>Afro</a></div>
-                        <div><a href="hip.php"><img class="index_img" src="img/migos.png">Hip-hop & RnB</a></div>
-                        <div><a href="gospel.html"><img class="index_img" src="img/kirk.png">Gospel</a></div>
-                        <div><a href="electronic.html"><img class="index_img" src="img/burna-boy.png">Electronic</a></div>
-                        <div><a href="pop.html"><img class="index_img" src="img/burna-boy.png">Pop</a></div>
-                        <div><a href="rock.html"><img class="index_img" src="img/burna-boy.png">Rock</a></div>
-                        <div><a href="reggae.html"><img class="index_img" src="img/burna-boy.png">Reggae</a></div>
-                        <div><a href="classical.html"><img class="index_img" src="img/burna-boy.png">Classical</a></div>
-                        <div><a href="country.html"><img class="index_img" src="img/burna-boy.png">Country</a></div>
-                        <div><a href="Jazz.html"><img class="index_img" src="img/burna-boy.png">Jazz</a></div>
+                        <div><img class="index_img" src="../img/burna-boy.png"><a href="afro.html"></a>Afro</a></div>
+                        <div><a href="hip.php"><img class="index_img" src="../img/migos.png">Hip-hop & RnB</a></div>
+                        <div><a href="gospel.html"><img class="index_img" src="../img/kirk.png">Gospel</a></div>
+                        <div><a href="electronic.html"><img class="index_img" src="../img/burna-boy.png">Electronic</a></div>
+                        <div><a href="pop.html"><img class="index_img" src="../img/burna-boy.png">Pop</a></div>
+                        <div><a href="rock.html"><img class="index_img" src="../img/burna-boy.png">Rock</a></div>
+                        <div><a href="reggae.html"><img class="index_img" src="../img/burna-boy.png">Reggae</a></div>
+                        <div><a href="classical.html"><img class="index_img" src="../img/burna-boy.png">Classical</a></div>
+                        <div><a href="country.html"><img class="index_img" src="../img/burna-boy.png">Country</a></div>
+                        <div><a href="Jazz.html"><img class="index_img" src="../img/burna-boy.png">Jazz</a></div>
                     </div>
                 
                 </div>

@@ -34,7 +34,7 @@
          
          while($row = $qr->fetch_assoc()) {
              echo"<hr> <div class='entry'>";
-             echo "<div class='img'> <img src="
+             echo "<div class='img'> <img src=../"
              .$row['Art'].">"
 
              ."</div><div><p align=left id='entry_title'>"

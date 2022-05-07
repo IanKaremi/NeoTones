@@ -43,7 +43,7 @@
                     {
                         while($row = $qr->fetch_assoc()) {
                             echo"<hr> <div class='entry'>";
-                            echo "<div class='img'> <img src="
+                            echo "<div class='img'> <img src=../"
                             .$row['Art'].">"
 
                             ."</div><div><p align=left id='entry_title'>"
@@ -60,7 +60,7 @@
                             .$row['Description']."    "
                             ."</div><div>"."Price: Ksh. "
                             .$row['Price']." "
-                            ."<button><a href=add_cart.php?ID=" .$row['ID']. ">Add To Cart</a></button>"
+                            ."<button><a href=../add_cart.php?ID=" .$row['ID']. "&page=".htmlspecialchars($_SERVER["PHP_SELF"]).">Add To Cart</a></button>"
                             ."</div>";
                             echo"</div>";
                         }

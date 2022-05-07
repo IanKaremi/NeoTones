@@ -9,6 +9,7 @@
 	else{
 		$_SESSION['message'] = 'Product already in cart';
 	}
+	$url = $_GET['page'];
 
-	header("location: $_GET['page']");
+	header("location:".$url);
 ?>

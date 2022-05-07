@@ -14,7 +14,6 @@
                         <a href="pop.php">Pop</a>
                         <a href="rock.php">Rock</a>
                         <a href="reggae.php">Reggae</a>
-                        <a href="classical.php">Classical</a>
                         <a href="country.php">Country</a>
                         <a href="Jazz.php">Jazz</a>                   
                     </div>

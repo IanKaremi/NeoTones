@@ -12,11 +12,11 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <link rel="stylesheet" href="common.css">
-        <link rel="stylesheet" href="my_stylesheet.css">
+        <link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" href="../css/my_stylesheet.css">
     </head>
     <?php
-        include_once"top.php";
+        include_once"../top.php";
     ?>
    
                 <h1>"Home of The Vibe."</h1>

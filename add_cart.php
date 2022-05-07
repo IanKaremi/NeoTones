@@ -10,5 +10,5 @@
 		$_SESSION['message'] = 'Product already in cart';
 	}
 
-	header('location: electronic.php');
+	header("location: $_GET['page']");
 ?>

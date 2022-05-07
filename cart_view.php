@@ -11,12 +11,12 @@
         <meta name="description" content="">
         <meta name="theme-color" content=""#8a5cffff>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="feed.css">
-        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="css/feed.css">
+        <link rel="stylesheet" href="css/common.css">
         <style>
            <?php
             
-                include_once "button.css";
+                include_once "../css/button.css";
             ?>
         </style>
         
@@ -29,7 +29,8 @@
 
                   $query="SELECT * FROM `works_list` WHERE ID IN (".implode(',',$_SESSION['cart']).")";
                   $qr= $con ->query($query) or die($con->error);
-                  
+            if(isset($_SESSION['cart'])){
+
                   if(!$qr || mysqli_num_rows($qr) > 0)
                   {
                       while($row = $qr->fetch_assoc()) {
@@ -58,16 +59,13 @@
 
                       echo"<hr>";
                   }else{
-                      echo"0 results";
+                      echo" Zero results";
                   };
 
-                  //echo($query);
+                }else{
+                    echo"Your cart is empty.";
+                }      
 
-                   
-
-                   
-
-                   
                   mysqli_close($con);
                   include_once "bottom.html"
                 ?>

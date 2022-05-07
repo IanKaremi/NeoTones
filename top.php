@@ -7,20 +7,20 @@
             <div class="drop">
                 <div><a>Genres</a>
                     <div class="on_hover">
-                        <a href="afro.html">Afro</a>
-                        <a href="hip.php">Hip-hop & RnB</a>
-                        <a href="gospel.php">Gospel</a>
-                        <a href="electronic.php">Electronic</a>
-                        <a href="pop.html">Pop</a>
-                        <a href="rock.html">Rock</a>
-                        <a href="reggae.html">Reggae</a>
-                        <a href="classical.html">Classical</a>
-                        <a href="country.html">Country</a>
-                        <a href="Jazz.html">Jazz</a>                   
+                        <a href="Pages/afro.php">Afro</a>
+                        <a href="Pages/hip.php">Hip-hop & RnB</a>
+                        <a href="Pages/gospel.php">Gospel</a>
+                        <a href="Pages/electronic.php">Electronic</a>
+                        <a href="Pages/pop.php">Pop</a>
+                        <a href="Pages/rock.php">Rock</a>
+                        <a href="Pages/reggae.php">Reggae</a>
+                        <a href="Pages/classical.php">Classical</a>
+                        <a href="Pages/country.php">Country</a>
+                        <a href="Pages/Jazz.php">Jazz</a>                   
                     </div>
                 </div>
             </div>
-            <div><form action="search.php" class="s_top" method="post"><input type='search' name="search" placeholder="Search" style="padding: 6px; border-radius: 0; border: none; margin-left: 5px; margin-right:5px;">
+            <div><form action="Pages/search.php" class="s_top" method="post"><input type='search' name="search" placeholder="Search" style="padding: 6px; border-radius: 0; border: none; margin-left: 5px; margin-right:5px;">
             <input type="submit" value="Go" style="padding: 6px; border:1px solid transparent; border-radius: 2px; background-color: white;"></form></div>
             <?php
             session_start();
@@ -36,5 +36,8 @@
         </div>
     </header>
     <div class="home_body">
-        <div><a href="cart_view.php">View Cart</a></div>
+        <div>
+            <a href="cart_view.php">View Cart</a>
+            <a href="checkout.php">Checkout</a>
+        </div>
         <div class="home_content">

@@ -1,28 +1,4 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Cart - Neo Tones</title>
-        <meta name="description" content="">
-        <meta name="theme-color" content=""#8a5cffff>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="feed.css">
-        <link rel="stylesheet" href="common.css">
-        <style>
-           <?php
-            
-                include_once "button.css";
-            ?>
-        </style>
-        
-
-    </head>
-    <?php
+<?php
         include_once"top.php";
         echo "<h1 align=left>Cart</h1>";
                   require_once"config.php";
@@ -51,7 +27,7 @@
                           .$row['Description']."    "
                           ."</div><div>"."Price: Ksh. "
                           .$row['Price']." "
-                          ."<button><a href=item_delete.php?ID=" .$row['ID']. ">Remove</a></button>"
+                          ."<button><a href=".$row['url'].">Download</a></button>"
                           ."</div>";
                           echo"</div>";
                       }
@@ -61,14 +37,6 @@
                       echo"0 results";
                   };
 
-                  //echo($query);
-
-                   
-
-                   
-
-                   
                   mysqli_close($con);
                   include_once "bottom.html"
                 ?>
-</html>

@@ -7,12 +7,12 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Electronic - Neo Tones</title>
+        <title>Pop - Neo Tones</title>
         <meta name="description" content="">
         <meta name="theme-color" content=""#8a5cffff>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="feed.css">
-        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="css/feed.css">
+        <link rel="stylesheet" href="css/common.css">
         <style>
            <?php
             
@@ -24,7 +24,7 @@
     </head>
     <?php
         include_once"top.php";
-        echo "<h1 align=left>Best Of Electronic Music</h1>";
+        echo "<h1 align=left>Best Of Pop Music</h1>";
                     require_once"config.php";
 
                     if(!isset($_SESSION['cart'])){
@@ -35,7 +35,7 @@
 
                    
 
-                    $elec="SELECT * FROM `works_list` WHERE `Genre`='electronic';";
+                    $elec="SELECT * FROM `works_list` WHERE `Genre`='pop';";
 
                     $qr= $con ->query($elec) or die($con->error);
 

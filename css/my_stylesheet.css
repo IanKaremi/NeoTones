@@ -1,7 +1,7 @@
 h1{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
-    font-size: 90px;
+    font-size: 5em;
 }
 p{
     font-size: larger;
@@ -9,6 +9,7 @@ p{
 .genres>div{
     padding:10px;
     border:solid 0.1rem;
+    background-color: #67a28e;
 }
 .genres>div:hover{
     border:none;
@@ -45,10 +46,10 @@ img{
 }
 .genres{
     display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     height:25em;
     margin:20px;
-    background-color: #67a28e;
+
   
 }

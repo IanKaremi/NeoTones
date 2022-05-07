@@ -2,7 +2,7 @@
     <header>
         <div class="logo" align="left"><a href="index.php">NeoTones</a></div>
         <div class="toolbar">
-            <div><a href="feed.html">Feed</a></div>
+            <div><a href="feed.php">Feed</a></div>
             <div><a href="likes.php">Purchased</a></div>
             <div class="drop">
                 <div><a>Genres</a>

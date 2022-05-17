@@ -52,7 +52,7 @@
                 echo"<div id= 'login'><a href='../NeoTones/Pages/logout.php'>Log Out</a></div>";
            }else{
                echo"<div id='login'><a href='login.php'>Login</a></div>";
-               echo"<div id='sign_up'><a href='signup.php'>Sign_Up</a></div>";
+               echo"<div id='sign_up'><a href='signup.php'>Sign Up</a></div>";
            }
             ?>
 
@@ -70,7 +70,8 @@
                    require_once"config.php";
                    $total_price=0;
 
-            if(isset($_SESSION['cart'])){
+            if(isset($_SESSION['login'])){
+                if(isset($_SESSION['cart'])){
                 
                 $query="SELECT * FROM `works_list` WHERE ID IN (".implode(',',$_SESSION['cart']).")";
                 $qr= $con ->query($query) or die($con->error);
@@ -111,7 +112,10 @@
 
                 }else{
                     echo"Your cart is empty.";
-                }      
+                } 
+            }else{
+                echo"Please log in to add items to cart.";
+            }   
 
                   mysqli_close($con);
                  

@@ -25,6 +25,7 @@
     </head>
     <?php
         include_once"../top.php";
+        error_reporting(0);
     ?>
    
                 <h1>"Home of The Vibe."</h1>

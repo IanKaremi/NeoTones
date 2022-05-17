@@ -69,7 +69,9 @@
         echo "<h1 align=left>Checkout</h1>";
                   require_once"config.php";
 
-               
+                require_once"userid.php";
+                
+
 
                   $query="SELECT * FROM `works_list` WHERE ID IN (".implode(',',$_SESSION['cart']).")";
                   $qr= $con ->query($query) or die($con->error);

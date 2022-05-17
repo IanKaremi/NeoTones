@@ -23,9 +23,9 @@
             <input type="submit" value="Go" style="padding: 6px; border:1px solid transparent; border-radius: 2px; background-color: white;"></form></div>
             <?php
             session_start();
-            if( $_SESSION['login']==true){
+            if(isset($_SESSION['login'])){
                 echo"<div>". $_SESSION['username']."</div>";
-                echo"<div id= 'login'><a href='login.php'>Log Out</a></div>";
+                echo"<div id= 'login'><a href='logout.php'>Log Out</a></div>";
            }else{
                echo"<div id='login'><a href='login.php'>Login</a></div>";
                echo"<div id='sign_up'><a href='signup.php'>Sign_Up</a></div>";
@@ -37,6 +37,6 @@
     <div class="home_body">
         <div class="sidebar">
             <a href="../cart_view.php">View Cart</a>
-            <a href="../checkout.php">Checkout</a>
+           
         </div>
         <div class="home_content">

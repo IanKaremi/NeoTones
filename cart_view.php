@@ -49,7 +49,7 @@
             session_start();
             if( $_SESSION['login']==true){
                 echo"<div>". $_SESSION['username']."</div>";
-                echo"<div id= 'login'><a href='login.php'>Log Out</a></div>";
+                echo"<div id= 'login'><a href='../NeoTones/Pages/logout.php'>Log Out</a></div>";
            }else{
                echo"<div id='login'><a href='login.php'>Login</a></div>";
                echo"<div id='sign_up'><a href='signup.php'>Sign_Up</a></div>";
@@ -61,16 +61,17 @@
     <div class="home_body">
         <div class="sidebar">
             <a href="cart_view.php">View Cart</a>
-            <a href="checkout.php">Checkout</a>
+        
         </div>
         <div class="home_content">
     <?php
     
         echo "<h1 align=left>Cart</h1>";
-                  require_once"config.php";
+                   require_once"config.php";
+                   $total_price=0;
 
-                  $query="SELECT * FROM `works_list` WHERE ID IN (".implode(',',$_SESSION['cart']).")";
-                  $qr= $con ->query($query) or die($con->error);
+                   $query="SELECT * FROM `works_list` WHERE ID IN (".implode(',',$_SESSION['cart']).")";
+                   $qr= $con ->query($query) or die($con->error);
             if(isset($_SESSION['cart'])){
 
                   if(!$qr || mysqli_num_rows($qr) > 0)
@@ -97,6 +98,9 @@
                           ."<button><a href=item_delete.php?ID=" .$row['ID']. ">Remove</a></button>"
                           ."</div>";
                           echo"</div>";
+
+                          $total_price += $row['Price']; 
+                          
                       }
 
                       echo"<hr>";
@@ -109,6 +113,29 @@
                 }      
 
                   mysqli_close($con);
-                  include_once "bottom.html"
+                 
                 ?>
+                <div class="checkout">
+                    
+                    <div><p id="entry_title">Total Price: KSH.<?php echo($total_price);?> </p></div>
+             
+                    <div> 
+                        <button align="right">
+                            <a href="payment.php">Checkout</a>
+                        </button>
+                    </div>
+            
+                </div>
+                             
+                </div>
+           
+            </div>
+            <div></div>
+        </div>
+        <script src="" async defer></script>
+        
+
+    </body>
+                
+               
 </html>

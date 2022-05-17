@@ -43,6 +43,8 @@ img{
 }
 .g_section{
     padding-bottom: 10em;
+    display:grid;
+    grid-template-columns: 1fr 8fr 1fr;
 }
 .genres{
     display:grid;
@@ -50,6 +52,8 @@ img{
     grid-template-rows: 1fr 1fr 1fr;
     height:25em;
     margin:20px;
+    max-width: 1020px;
+    margin:auto;
 
   
 }

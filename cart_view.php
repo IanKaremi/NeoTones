@@ -22,6 +22,7 @@
         
 
     </head>
+    
     <body align="center">
     <header>
         <div class="logo" align="left"><a href="Pages/index.php">NeoTones</a></div>
@@ -70,9 +71,10 @@
                    require_once"config.php";
                    $total_price=0;
 
-                   $query="SELECT * FROM `works_list` WHERE ID IN (".implode(',',$_SESSION['cart']).")";
-                   $qr= $con ->query($query) or die($con->error);
             if(isset($_SESSION['cart'])){
+                
+                $query="SELECT * FROM `works_list` WHERE ID IN (".implode(',',$_SESSION['cart']).")";
+                $qr= $con ->query($query) or die($con->error);
 
                   if(!$qr || mysqli_num_rows($qr) > 0)
                   {

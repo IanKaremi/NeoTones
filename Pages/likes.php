@@ -11,40 +11,29 @@
         <meta name="description" content="">
         <meta name="theme-color" content="#8a5cffff">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="feed.css">
-        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="../css/feed.css">
+        <link rel="stylesheet" href="../css/common.css">
     </head>
-    <body align="center">
-        <header>
-            <div class="logo" align="left"><a href="index.html">NeoTones</a></div>
-            <div class="toolbar">
-                <div><a href="feed.html">Feed</a></div>
-                <div><a href="likes.html">Purchased</a></div>
-                <div class="drop">
-                    <div><a>Genres</a>
-                        <div class="on_hover">
-                            <a href="afro.html">Afro</a>
-                            <a href="hip.html">Hip-hop & RnB</a>
-                            <a href="gospel.html">Gospel</a>
-                            <a href="electronic.html">Electronic</a>
-                            <a href="pop.html">Pop</a> <a href="rock.html">Rock</a>
-                            <a href="reggae.html">Reggae</a>
-                            <a href="classical.html">Classical</a>
-                            <a href="country.html">Country</a>
-                            <a href="Jazz.html">Jazz</a>                   
-                        </div>
-                    </div>
-                </div>
-                <div class="s_top"><input type="text" placeholder="search"></div>
-                <div class="h_d"><a href="">Profile</a></div>
-
-            </div>
-        </header>
-        <div class="home_body">
-            <div></div>
-            <div class="home_content">
+    <?php include_once"../top.php";?>
+   
                 <h1 align="left">Purchased Works</h1>
+                <?php
+                include_once"../config.php";
+                include_once"../userid.php";
                 
+                $sql = "SELECT * FROM `purchased_works` WHERE userID='$user_id';";
+                $purch= $con->query($sql) or die($conn->error);
+                while($row= $purch-> fetch_assoc()){
+                    echo"<div class='purchases'>";
+                    echo"<img src=../".$row['Art'].">";
+                    echo "<div class='p_text'>".$row['Artist Name']."-".$row['Name']."</div>"."<br>";
+                    echo"<button><a href=".$row['url'].">Download</a></button>";
+                   
+                    echo"</div>";
+                    echo"<hr>";
+                }
+              
+                ?>
                
                 
                 </div>

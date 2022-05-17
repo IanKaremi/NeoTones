@@ -54,7 +54,19 @@ button:hover{
 
 .checkout{
 opacity: 1;
-
 padding-bottom: 5em;
+}
+.purchases{
+    display:flex;
+    flex-grow: 1;
+}
 
+.purchases>button{
+    background-color: blueviolet;
+    height: 50px;
+    justify-content: flex-end;
+}
+.p_text{
+    width: max-content;
+    flex-grow: 2;
 }

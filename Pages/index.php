@@ -43,21 +43,22 @@
                     <!--style the search bar-->
                 </div>
                 <hr>
+                <h2>... or Choose by Genre:</h2>
                 <div class="g_section">
-                    <h2>... or Choose by Genre:</h2>
-
+                    <div></div>
                     <div class="genres">
-                        <div><img class="index_img" src="../img/burna-boy.png"><a href="afro.php"></a>Afro</a></div>
-                        <div><a href="hip.php"><img class="index_img" src="../img/migos.png">Hip-hop & RnB</a></div>
-                        <div><a href="gospel.html"><img class="index_img" src="../img/kirk.png">Gospel</a></div>
-                        <div><a href="electronic.html"><img class="index_img" src="../img/burna-boy.png">Electronic</a></div>
-                        <div><a href="pop.html"><img class="index_img" src="../img/burna-boy.png">Pop</a></div>
-                        <div><a href="rock.html"><img class="index_img" src="../img/burna-boy.png">Rock</a></div>
-                        <div><a href="reggae.html"><img class="index_img" src="../img/burna-boy.png">Reggae</a></div>
-                        <div><a href="country.html"><img class="index_img" src="../img/burna-boy.png">Country</a></div>
-                        <div><a href="Jazz.html"><img class="index_img" src="../img/burna-boy.png">Jazz</a></div>
+                        <div><img class="index_img" src="../img/burna-boy.png"><br><a href="afro.php"></a>Afro</a></div>
+                        <div><a href="hip.php"><img class="index_img" src="../img/migos.png"><br>Hip-hop & RnB</a></div>
+                        <div><a href="gospel.php"><img class="index_img" src="../img/kirk.png"><br>Gospel</a></div>
+                        <div><a href="electronic.php"><img class="index_img" src="../img/deadmau5.png"><br>Electronic</a></div>
+                        <div><a href="pop.php"><img class="index_img" src="../img/ed.png"><br>Pop</a></div>
+                        <div><a href="rock.php"><img class="index_img" src="../img/polyphia.png"><br>Rock</a></div>
+                        <div><a href="reggae.php"><img class="index_img" src="../img/kon.png"><br>Reggae</a></div>
+                        <div><a href="country.php"><img class="index_img" src="../img/lb.png"><br>Country</a></div>
+                        <div><a href="Jazz.php"><img class="index_img" src="../img/hh.png"><br>Jazz</a></div>
                     </div>
-                
+                    <div></div>
+                <br><br>
                 </div>
            
             </div>

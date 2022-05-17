@@ -11,8 +11,8 @@
         <meta name="description" content="">
         <meta name="theme-color" content="#8a5cffff">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-        <link rel="stylesheet" href="common.css">
+        <link rel="stylesheet" href="../css/feed.css">
+        <link rel="stylesheet" href="../css/common.css">
         <style>
             h1{
                 margin-left: 1em;
@@ -64,10 +64,10 @@
     <?php
                 $search=strip_tags($_POST['search']);
                 
-                include_once"top.php";
+                include_once"../top.php";
                    echo "<h1 align=left>Search results for ".$search."</h1>";
                   
-                    require_once"config.php";
+                    require_once"../config.php";
                    
                     
 
@@ -80,7 +80,7 @@
                     {
                         while($row = $qr->fetch_assoc()) {
                             echo"<hr> <div class='entry'>";
-                            echo "<div class='img'> <img src="
+                            echo "<div class='img'> <img src=../"
                             .$row['Art'].">"
 
                             ."</div><div><p align=left id='entry_title'>"
@@ -109,7 +109,7 @@
                     };
 
 
-                    include_once "bottom.html";
+                    include_once "../bottom.html";
                 ?>
      
         

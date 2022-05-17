@@ -28,7 +28,7 @@
                 echo"<div id= 'login'><a href='logout.php'>Log Out</a></div>";
            }else{
                echo"<div id='login'><a href='login.php'>Login</a></div>";
-               echo"<div id='sign_up'><a href='signup.php'>Sign_Up</a></div>";
+               echo"<div id='sign_up'><a href='signup.php'>Sign Up</a></div>";
            }
             ?>
 

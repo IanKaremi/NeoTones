@@ -47,8 +47,7 @@
             <div><form action="search.php" class="s_top" method="post"><input type='search' name="search" placeholder="Search" style="padding: 6px; border-radius: 0; border: none; margin-left: 5px; margin-right:5px;">
             <input type="submit" value="Go" style="padding: 6px; border:1px solid transparent; border-radius: 2px; background-color: white;"></form></div>
             <?php
-            session_start();
-            if( $_SESSION['login']==true){
+            if( isset($_SESSION['login'])){
                 echo"<div>". $_SESSION['username']."</div>";
                 echo"<div id= 'login'><a href='../NeoTones/Pages/logout.php'>Log Out</a></div>";
            }else{

@@ -1,6 +1,7 @@
 <?php
 
-$user = $_SESSION['username'];
+if (isset($_SESSION['username'])){
+    $user = $_SESSION['username'];
                 $id="SELECT User_ID FROM users WHERE username= '$user'";
                 $qr2= $con ->query($id) or die($con->error);
                     
@@ -13,4 +14,5 @@ $user = $_SESSION['username'];
                     }
 
                 }
+    }
 ?>

@@ -20,19 +20,25 @@
                 <?php
                 include_once"../config.php";
                 include_once"../userid.php";
-                
-                $sql = "SELECT * FROM `purchased_works` WHERE userID='$user_id';";
-                $purch= $con->query($sql) or die($conn->error);
-                while($row= $purch-> fetch_assoc()){
-                    echo"<div class='purchases'>";
-                    echo"<img src=../".$row['Art'].">";
-                    echo "<div class='p_text'>".$row['Artist Name']."-".$row['Name']."</div>"."<br>";
-                    echo"<button><a href=".$row['url'].">Download</a></button>";
-                   
-                    echo"</div>";
-                    echo"<hr>";
+                if(isset($_SESSION['login'])){
+                    if(isset($user_id)){
+                        $sql = "SELECT * FROM `purchased_works` WHERE userID='$user_id';";
+                        $purch= $con->query($sql) or die($conn->error);
+                        while($row= $purch-> fetch_assoc()){
+                            echo"<div class='purchases'>";
+                            echo"<img src=../".$row['Art'].">";
+                            echo "<div class='p_text'>".$row['Artist Name']."-".$row['Name']."</div>"."<br>";
+                            echo"<button><a href=".$row['url'].">Download</a></button>";
+                        
+                            echo"</div>";
+                            echo"<hr>";
+                        }
+                    }else{
+                        echo"You have not purchased any songs yet.";
+                    }
+                }else{
+                    echo"Please Log in to see your purchased works.";
                 }
-              
                 ?>
                
                 

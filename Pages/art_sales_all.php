@@ -11,16 +11,13 @@
         <meta name="theme-color" content="#8a5cffff">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
         <link rel="stylesheet" href="../css/common.css">
         <link rel="stylesheet" href="../css/my_stylesheet.css">
         <style>
            <?php
-            
                 include_once "../css/button.css";
             ?>
         </style>
-        
 
     </head>
     <?php
@@ -29,19 +26,26 @@
     ?>
 
         <?php
-            $sql = "SELECT * FROM `purchased_works` WHERE `Artist Name` LIKE \'%neon_nemmie%\';";
+            $total_price=0;
+            include"../config.php";
+            $sql = "SELECT * FROM `purchased_works` WHERE `Artist Name` LIKE '%".$_SESSION['username']."%';";
+            $query= $con->query($sql) or die($con->error);
+            while($row = $query->fetch_assoc()){
+                $total_price += $row['Price'];
+            }
+            $num= $query->num_rows;
         ?>
    
                 <h1>Sales for: <?php echo($_SESSION['username']);?></h1>
                 <p>For All Time:</p> 
                 <hr>
                 <h2>Your tracks have been purchased</h2>
-                <p> Times</p>
+                <p> <?php echo("$num"); ?> Times</p>
                 <h2>With total revenue of</h2>
-                <p>KSH.2000</p>
-              
-                
-           
+                <p>KSH. <?php echo("$total_price");?></p>
+                <h2>With 30% revenue share,you are due </h2>
+                <p>KSH.<?php echo (0.9*$total_price);?>
+                <br><br>
             </div>
             <div></div>
         </div>

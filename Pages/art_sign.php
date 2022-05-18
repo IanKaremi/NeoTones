@@ -55,7 +55,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+        $sql = "INSERT INTO users (username, password,is_artist) VALUES (?, ?,1)";
          
         if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -68,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Redirect to login page
-                header("location: login.php");
+                header("location: art_login.php");
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
             }
@@ -92,7 +92,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Signup - Neo Tones</title>
+    <title>Neo Tones For Artists</title>
     <meta name="description" content="">
     <meta name="theme-color" content=""#8a5cffff>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -108,37 +108,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body align="center">
         <header>
-            <div class="logo" align="left"><a href="index.html">NeoTones</a></div>
-            <div class="toolbar">
-                <div><a href="feed.html">Feed</a></div>
-                <div><a href="likes.html">Purchased</a></div>
-                <div class="drop">
-                    <div><a>Genres</a>
-                        <div class="on_hover">
-                            <a href="afro.html">Afro</a>
-                            <a href="hip.html">Hip-hop & RnB</a>
-                            <a href="gospel.html">Gospel</a>
-                            <a href="electronic.php">Electronic</a>
-                            <a href="pop.html">Pop</a>
-                            <a href="rock.html">Rock</a>
-                            <a href="reggae.html">Reggae</a>
-                            <a href="classical.html">Classical</a>
-                            <a href="country.html">Country</a>
-                            <a href="Jazz.html">Jazz</a>                   
-                        </div>
-                    </div>
-                </div>
-                <div class="s_top"><input type="text" placeholder="search"></div>
-                <div id="login"><a href="login.php">Login</a></div>
-                <div id="sign_up"><a href="signup.php">Sign_Up</a></div>
-
-            </div>
+            <div class="logo"><a href="index.html">NeoTones For Artists</a></div>
+           
         </header>
     <div class=home_body>
         <div></div>
         <div class="home_content">
             <h2>Sign Up</h2>
-            <p>Please fill this form to create an account.</p>
+            <p>Please fill this form to create an account. This will allow you to see data on your track sales.</p>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <!--<form action="test.php" method="post">-->
                 <div class="form-group">
@@ -147,6 +124,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     border: 2px solid white; width:25em;"placeholder="Username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
                     <span class="invalid-feedback"><?php echo $username_err; ?></span>
                 </div>    
+                <div class="form-group">
+                
+                    <input type="text" name="email" style="    padding: 6px;font-size: 17px;margin-bottom: 5px;margin-top: 5px;
+                    border: 2px solid white; width:25em;"placeholder="Email Address" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
+                    <span class="invalid-feedback"><?php echo $username_err; ?></span>
+                </div>
                 <div class="form-group">
                
                     <input type="password" name="password" placeholder="Password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
@@ -161,8 +144,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     <input type="submit" style="padding:6px; border:2px; background-color:white;"class="btn btn-primary" value="Submit">
                     <input type="reset" style="padding:6px; border:2px; background-color:white;" class="btn btn-secondary ml-2" value="Reset">
                 </div>
-                <p>Already have an account? <a href="login.php">Login here</a>.</p>
-                <p>Are you an artist? <a href=art_sign.php>Artist Signup</a></p>
+                <p>Already have an account? <a href="art_login.php">Artist Login</a>.</p>
+               
             </form>
         </div>    
         <div></div>

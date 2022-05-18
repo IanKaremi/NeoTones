@@ -25,7 +25,7 @@ if (isset($_POST['login'])){
             if($pass_match){
                 $_SESSION["login"] = true;
                 $_SESSION["username"] = $row['username'];
-                header('location: index.php');
+                header('location: art_home.php');
                 echo"Success!";
             }
         }
@@ -51,7 +51,7 @@ if (isset($_POST['login'])){
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Login - Neo Tones</title>
+        <title>Artist Login</title>
         <meta name="description" content="">
         <meta name="theme-color" content=""#8a5cffff>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -67,25 +67,9 @@ if (isset($_POST['login'])){
     </head>
     <body align=center>
         <header>
-            <div class="logo" align="left"><a href="index.php">NeoTones</a></div>
+            <div class="logo" align="left">NeoTones For Artists</a></div>
             <div class="toolbar">
-                <div><a href="feed.php">Feed</a></div>
-                <div><a href="likes.php">Purchased</a></div>
-                <div class="drop">
-                    <div><a>Genres</a>
-                        <div class="on_hover">
-                            <a href="afro.php">Afro</a>
-                            <a href="hip.php">Hip-hop & RnB</a>
-                            <a href="gospel.php">Gospel</a>
-                            <a href="electronic.php">Electronic</a>
-                            <a href="pop.php">Pop</a>
-                            <a href="rock.php">Rock</a>
-                            <a href="reggae.php">Reggae</a>
-                            <a href="country.php">Country</a>
-                            <a href="Jazz.php">Jazz</a>                   
-                        </div>
-                    </div>
-                </div>
+                <div><a href="art_home.php">Sales</a></div>
                 
              
             </div>
@@ -119,7 +103,7 @@ if (isset($_POST['login'])){
                 <div class="form-group">
                     <input type="submit"  name="login" value="Login">
                 </div>
-                <p>Don't have an account? <a href="signup.php">Sign up now</a>.</p>
+                <p>Don't have an artist account? <a href="art_sign.php">Sign up now</a>.</p>
             </form>
         </div>
         </div>

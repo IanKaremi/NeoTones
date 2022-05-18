@@ -55,7 +55,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
         
         // Prepare an insert statement
+        $email=trim($_POST["email"]);
         $sql = "INSERT INTO users (username, password,is_artist) VALUES (?, ?,1)";
+        $sql2= "INSERT INTO artists (`Artist_ID`, `Artist Name` , `Artist_Email`) VALUES(NULL, $username, $email)";
          
         if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -68,6 +70,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Redirect to login page
+                $query= $con->query($sql2) or die($con->error);
                 header("location: art_login.php");
             } else{
                 echo "Oops! Something went wrong. Please try again later.";

@@ -120,6 +120,7 @@ if (isset($_POST['login'])){
                     <input type="submit"  name="login" value="Login">
                 </div>
                 <p>Don't have an account? <a href="signup.php">Sign up now</a>.</p>
+                <p>Artist? <a href="art_login.php">Artist Login</a>.</p>
             </form>
         </div>
         </div>

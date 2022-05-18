@@ -6,9 +6,7 @@
                 <div><a>Sales</a>
                     <div class="on_hover">
                         <a href="art_home.php">This Month</a>
-                        <a href="art_sales_year.php">Last 12 Months</a>
                         <a href="art_sales_all.php">All Time</a>
-                                        
                     </div>
                 </div>
             </div>

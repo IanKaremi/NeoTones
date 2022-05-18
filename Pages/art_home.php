@@ -28,16 +28,27 @@
 
     ?>
    
+   <?php
+            $total_price=0;
+            include"../config.php";
+            $sql = "SELECT * FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-30 AND CURRENT_DATE AND `Artist Name` LIKE '%".$_SESSION['username']."%';";
+            $query= $con->query($sql) or die($con->error);
+            while($row = $query->fetch_assoc()){
+                $total_price += $row['Price'];
+            }
+            $num= $query->num_rows;
+        ?>
+   
                 <h1>Sales for: <?php echo($_SESSION['username']);?></h1>
-                <p>In the Month ending: 01-06-2022</p> 
+                <p>For the last 30 days:</p> 
                 <hr>
                 <h2>Your tracks have been purchased</h2>
-                <p> Times</p>
+                <p> <?php echo("$num"); ?> Times</p>
                 <h2>With total revenue of</h2>
-                <p>KSH.2000</p>
-              
-                
-           
+                <p>KSH. <?php echo("$total_price");?></p>
+                <h2>With 30% revenue share,you are due </h2>
+                <p>KSH.<?php echo (0.9*$total_price);?>
+                <br><br>
             </div>
             <div></div>
         </div>

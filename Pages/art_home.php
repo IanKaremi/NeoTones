@@ -31,27 +31,35 @@
    <?php
             $total_price=0;
             include"../config.php";
-            $sql = "SELECT * FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-30 AND CURRENT_DATE AND `Artist Name` LIKE '%".$_SESSION['username']."%';";
-            $query= $con->query($sql) or die($con->error);
-            while($row = $query->fetch_assoc()){
-                $total_price += $row['Price'];
-            }
-            $num= $query->num_rows;
+            if(isset($_SESSION['username'])){
+                $sql = "SELECT * FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-30 AND CURRENT_DATE AND `Artist Name` LIKE '%".$_SESSION['username']."%';";
+                $query= $con->query($sql) or die($con->error);
+                while($row = $query->fetch_assoc()){
+                    $total_price += $row['Price'];
+                }
+                $num= $query->num_rows;
+                echo"<h1>Sales for ".$_SESSION['username']."</h1>";
+                echo"<p>For the last 30 days </p><hr>"; 
+                
+                echo"<h2>Your tracks have been purchased</h2>";
+                echo"<p> ".$num."Times</p>";
+                echo"<h2>With total revenue of</h2>";
+                echo"<p>KSH".$total_price."</p>";
+                echo"<h2>With 30 percent revenue share,you are due KSH:</h2>";
+                echo(0.7*$total_price);
+                echo"<br><br>";
+
+
+        }else {
+            $num=0;
+            echo"User not Found";
+        }
         ?>
    
-                <h1>Sales for: <?php echo($_SESSION['username']);?></h1>
-                <p>For the last 30 days:</p> 
-                <hr>
-                <h2>Your tracks have been purchased</h2>
-                <p> <?php echo("$num"); ?> Times</p>
-                <h2>With total revenue of</h2>
-                <p>KSH. <?php echo("$total_price");?></p>
-                <h2>With 30% revenue share,you are due </h2>
-                <p>KSH.<?php echo (0.9*$total_price);?>
-                <br><br>
             </div>
             <div></div>
         </div>
         <script src="" async defer></script>
+        <footer>For support or enquiries, please email us at info@neotones.com</footer>
     </body>
 </html>

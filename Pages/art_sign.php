@@ -5,6 +5,7 @@ require_once "../config.php";
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
+$email="";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -55,10 +56,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
         
         // Prepare an insert statement
-        $email=trim($_POST["email"]);
+       
         $sql = "INSERT INTO users (username, password,is_artist) VALUES (?, ?,1)";
-        $sql2= "INSERT INTO artists (`Artist_ID`, `Artist Name` , `Artist_Email`) VALUES(NULL, $username, $email)";
-         
+       
         if($stmt = mysqli_prepare($con, $sql)){
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "ss", $username, $param_password);
@@ -70,8 +70,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
                 // Redirect to login page
-                $query= $con->query($sql2) or die($con->error);
-                header("location: art_login.php");
+                header("location: art_home.php");
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
             }
@@ -127,12 +126,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     border: 2px solid white; width:25em;"placeholder="Username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
                     <span class="invalid-feedback"><?php echo $username_err; ?></span>
                 </div>    
-                <div class="form-group">
                 
-                    <input type="text" name="email" style="    padding: 6px;font-size: 17px;margin-bottom: 5px;margin-top: 5px;
-                    border: 2px solid white; width:25em;"placeholder="Email Address" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                    <span class="invalid-feedback"><?php echo $username_err; ?></span>
-                </div>
                 <div class="form-group">
                
                     <input type="password" name="password" placeholder="Password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">

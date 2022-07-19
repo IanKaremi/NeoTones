@@ -117,7 +117,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <div></div>
         <div class="home_content">
             <h2>Sign Up</h2>
-            <p>Please fill this form to create an account. This will allow you to see data on your track sales.</p>
+            <p>Please fill this form to create an account. This will allow you to see data on your track sales.<br>It will take a few days for the account to become active.</p>
             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <!--<form action="test.php" method="post">-->
                 <div class="form-group">

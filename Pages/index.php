@@ -37,7 +37,7 @@
                 <div class="search">
                     <h2>...Search by Artist Name or Title:</h2>
                     <form action="search.php" method="post">
-                    <input id="searchbar" type="search">
+                    <input id="searchbar" type="search" name="search">
                     <input id="search" type="submit" value="Go">
                     </form>
                     <!--style the search bar-->

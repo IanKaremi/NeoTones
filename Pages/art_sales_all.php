@@ -44,7 +44,7 @@
                 <h2>With total revenue of</h2>
                 <p>KSH. <?php echo("$total_price");?></p>
                 <h2>With 30% revenue share,you are due </h2>
-                <p>KSH.<?php echo (0.9*$total_price);?>
+                <p>KSH.<?php echo (0.7*$total_price);?>
                 <br><br>
             </div>
             <div></div>

@@ -127,6 +127,11 @@ on_hover>a{
     display:grid;
     grid-template-columns: 1fr 4fr 1fr  ;
 }
+#ft{
+    padding-top: 10px;
+    position:absolute;
+    bottom:10px;
+}
 @media screen and (max-width: 1120px) {
     body{
         font-size: small;
@@ -146,6 +151,9 @@ on_hover>a{
     .sidebar>a{
         position:relative;  top:10px;
         background-color: black;
+    }
+    #ft{
+        background-color: #e73c7e;
     }
   }
 

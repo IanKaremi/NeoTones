@@ -25,7 +25,12 @@ if (isset($_POST['login'])){
             if($pass_match){
                 $_SESSION["login"] = true;
                 $_SESSION["username"] = $row['username'];
-                header('location: index.php');
+                if ($row["usertype"]== 'admin') {
+                    header('location: ../admin_pages/admin_panel.php');
+                }
+                else{
+                    header('location: index.php');
+                }
                 echo"Success!";
             }
         }

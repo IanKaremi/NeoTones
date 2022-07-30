@@ -14,3 +14,13 @@
 #art{
     font: 1.5em sans-serif;
 }
+td{
+    padding: 10px;
+}
+thead{
+    font-size: large;
+    text-decoration: underline white;
+}
+table{
+    padding-left: 10px;
+}

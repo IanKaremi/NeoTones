@@ -68,11 +68,11 @@
         </div>
         <div class="home_content">
     <?php
-        echo "<h1 align=left>Total Sales - Last 30 Days</h1>";
+        echo "<h1 align=left>Total Sales - Last 365 Days</h1>";
                     require_once"../config.php";
                     $revenue=0;
 
-                    $total="SELECT COUNT(purchaseID) as num FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-30 AND CURRENT_DATE ";
+                    $total="SELECT COUNT(purchaseID) as num FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-365 AND CURRENT_DATE ";
                     $qr= $con ->query($total) or die($con->error);
                     $row= $qr->fetch_assoc();
                     echo "<h1>".$row['num']." transactions made.</h1>";
@@ -80,63 +80,63 @@
 
                     echo"<h3>Breakdown by Genre:</h3> <br><div id='gen'>";
 
-                    $elec="SELECT COUNT(purchaseID) as num FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-30 AND CURRENT_DATE AND`Genre`='electronic'; ";
+                    $elec="SELECT COUNT(purchaseID) as num FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-365 AND CURRENT_DATE AND`Genre`='electronic'; ";
                     $qr= $con ->query($elec) or die($con->error);
                     $row= $qr->fetch_assoc();
                     echo"Electronic: ";
                     echo $row['num'];
                     echo"<br>";
 
-                    $afro="SELECT COUNT(purchaseID) as num FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-30 AND CURRENT_DATE AND `Genre`='afro'; ";
+                    $afro="SELECT COUNT(purchaseID) as num FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-365 AND CURRENT_DATE AND `Genre`='afro'; ";
                     $qr= $con ->query($afro) or die($con->error);
                     $row= $qr->fetch_assoc();
                     echo"Afro: ";
                     echo $row['num'];
                     echo"<br>";
 
-                    $cty="SELECT COUNT(purchaseID) as num FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-30 AND CURRENT_DATE AND `Genre`='country'; ";
+                    $cty="SELECT COUNT(purchaseID) as num FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-365 AND CURRENT_DATE AND `Genre`='country'; ";
                     $qr= $con ->query($cty) or die($con->error);
                     $row= $qr->fetch_assoc();
                     echo"Country: ";
                     echo $row['num'];
                     echo"<br>";
 
-                    $gos="SELECT COUNT(purchaseID) as num FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-30 AND CURRENT_DATE AND `Genre`='gospel'; ";
+                    $gos="SELECT COUNT(purchaseID) as num FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-365 AND CURRENT_DATE AND `Genre`='gospel'; ";
                     $qr= $con ->query($gos) or die($con->error);
                     $row= $qr->fetch_assoc();
                     echo"Gospel: ";
                     echo $row['num'];
                     echo"<br>";
 
-                    $hip="SELECT COUNT(purchaseID) as num FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-30 AND CURRENT_DATE AND `Genre`='hip-hop'; ";
+                    $hip="SELECT COUNT(purchaseID) as num FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-365 AND CURRENT_DATE AND `Genre`='hip-hop'; ";
                     $qr= $con ->query($hip) or die($con->error);
                     $row= $qr->fetch_assoc();
                     echo"Hip-Hop & RnB: ";
                     echo $row['num'];
                     echo"<br>";
 
-                    $jazz="SELECT COUNT(purchaseID) as num FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-30 AND CURRENT_DATE AND `Genre`='jazz'; ";
+                    $jazz="SELECT COUNT(purchaseID) as num FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-365 AND CURRENT_DATE AND `Genre`='jazz'; ";
                     $qr= $con ->query($jazz) or die($con->error);
                     $row= $qr->fetch_assoc();
                     echo"Jazz: ";
                     echo $row['num'];
                     echo"<br>";
 
-                    $pop="SELECT COUNT(purchaseID) as num FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-30 AND CURRENT_DATE AND `Genre`='pop'; ";
+                    $pop="SELECT COUNT(purchaseID) as num FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-365 AND CURRENT_DATE AND `Genre`='pop'; ";
                     $qr= $con ->query($pop) or die($con->error);
                     $row= $qr->fetch_assoc();
                     echo"Pop: ";
                     echo $row['num'];
                     echo"<br>";
 
-                    $reg="SELECT COUNT(purchaseID) as num FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-30 AND CURRENT_DATE AND `Genre`='reggae'; ";
+                    $reg="SELECT COUNT(purchaseID) as num FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-365 AND CURRENT_DATE AND `Genre`='reggae'; ";
                     $qr= $con ->query($reg) or die($con->error);
                     $row= $qr->fetch_assoc();
                     echo"Reggae: ";
                     echo $row['num'];
                     echo"<br>";
 
-                    $roc="SELECT COUNT(purchaseID) as num FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-30 AND CURRENT_DATE AND `Genre`='rock'; ";
+                    $roc="SELECT COUNT(purchaseID) as num FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-365 AND CURRENT_DATE AND `Genre`='rock'; ";
                     $qr= $con ->query($roc) or die($con->error);
                     $row= $qr->fetch_assoc();
                     echo"Rock: ";
@@ -147,7 +147,7 @@
 
                     /* $sql = "SELECT `Artist Name`,MAX(mycount) from(SELECT `Artist Name`,Artist_ID,COUNT(purchaseID) AS mycount  FROM `purchased_works`GROUP BY Artist_ID) as counts;";*/
 
-                    $sql = "SELECT purchaseID,`Artist Name`, COUNT(purchaseID) AS `value_occurrence` FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-30 AND CURRENT_DATE GROUP BY `Artist Name` ORDER BY `value_occurrence` DESC LIMIT 1;";
+                    $sql = "SELECT purchaseID,`Artist Name`, COUNT(purchaseID) AS `value_occurrence` FROM `purchased_works` WHERE `date` BETWEEN CURRENT_DATE-365 AND CURRENT_DATE GROUP BY `Artist Name` ORDER BY `value_occurrence` DESC LIMIT 1;";
                     $query= $con ->query($sql) or die($con->error);
                     $row = $query->fetch_assoc();
                     echo"<h3>Top Selling Artist <br></h3>";

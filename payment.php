@@ -44,7 +44,7 @@
                       ."</div><div>"
                       ."</div><div>"
                       ."</div><div>"."Price: Ksh. "
-                      .$row['Price']."/ USD $".$row['Price']/100
+                      .$row['Price']."/ USD $".$row['Price']/120
                       ."</div>";
                       echo"</div>";
 
@@ -55,10 +55,7 @@
                 }
         
              
-           // $sql = "INSERT INTO `purchases` (`purchaseID`, `userID`, `workID`, `date`) VALUES (NULL, $user_id, $value, current_timestamp());";
-           // $q2=$con->query($sql) or die($con->error);
-           // $_SESSION['cart']=array();
-            //header("location: Pages/index.php");
+           
        }else{
            echo" Zero results";
        };
@@ -98,7 +95,13 @@
                 // const element = document.getElementById('paypal-button-container');
                 // element.innerHTML = '<h3>Thank you for your payment!</h3>';
                 // Or go to another URL:
-                actions.redirect('http://127.0.0.1/NeoTones/write_purchases.php');
+                <?php
+                    $sql = "INSERT INTO `purchases` (`purchaseID`, `userID`, `workID`, `date`) VALUES (NULL, $user_id, $value, current_timestamp());";
+                    $q2=$con->query($sql) or die($con->error);
+                    $_SESSION['cart']=array();
+                    
+                ?>
+                actions.redirect('http://127.0.0.1/NeoTones/Pages/likes.php');
         });
         },
         onCancel: (data, actions) =>{

@@ -36,7 +36,7 @@
     <header>
         <div class="logo" align="left"><a href="index.php">NeoTones For Administrators</a></div>
         <div class="toolbar">
-            <div><a href="admin_user_add.php">Add Artist or Adminisrator</a></div>
+            <div><a href="admin_user_add.php">Add Artist or Administrator</a></div>
             <div><a href="admin_works.php">Add/Remove Music</a></div>
             <div class="drop">
                 <div><a>Sales</a>
@@ -167,8 +167,8 @@
                     };
                     echo"<div id='rev'>";
                     echo"<div>Total Revenue: Ksh.".$revenue."</div>";
-                    echo "<div> Commission (10%): Ksh.".$revenue*.1."</div>";
-                    echo "<div>Expected Artist Payout: Ksh.". $revenue *0.9."</div>";
+                    echo "<div> Commission (30%): Ksh.".$revenue*.3."</div>";
+                    echo "<div>Expected Artist Payout: Ksh.". $revenue *0.7."</div>";
                     echo"</div>";
                     mysqli_close($con);
                     include_once "../bottom.html"
